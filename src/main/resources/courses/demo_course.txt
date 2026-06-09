@@ -1,0 +1,41 @@
+# Demo Course: The Gauntlet
+# A showcase course featuring every obstacle type: water, sandpits, and trees.
+# The ball must navigate from bottom-left to top-right around a central lake,
+# two sandpits, and four trees. Good for presentations and live demos.
+# All coordinates are non-negative: (0,0) is the bottom-left corner.
+# Water is anywhere height < 0.
+height_profile = 0.3 + 0.12 * sin(x / 7.0) + 0.10 * cos(y / 7.0) - 0.55 * exp(-((x - 9.0)^2 + (y - 9.0)^2) / 18.0)
+
+# Slope check:
+#   sin term:   0.12 / 7.0 = 0.017                    OK
+#   cos term:   0.10 / 7.0 = 0.014                    OK
+#   Gaussian:   0.55 * sqrt(2/18) * exp(-0.5) = 0.111 OK
+#   Combined:   0.111 + 0.017 + 0.014 = 0.142         OK
+#   2nd deriv:  0.55 * 4/18 * exp(-1) = 0.045         OK
+#   Lake center (9,9):   h = -0.107                   WATER  OK
+#   Start (2,2):         h =  0.429                   DRY    OK
+#   Target (17,17):      h =  0.303                   DRY    OK
+
+friction_kinetic = 0.07
+friction_static = 0.15
+
+start_x = 2.0
+start_y = 2.0
+
+target_x = 17.0
+target_y = 17.0
+target_radius = 0.15
+
+vmax = 5.0
+
+# --- OBSTACLES ---
+
+# Sandpits: x, y, radius, kinetic_friction, static_friction
+sandpit = 5.0, 6.0, 1.2, 0.40, 0.55
+sandpit = 13.0, 13.0, 1.2, 0.42, 0.58
+
+# Trees: x, y, radius
+tree = 7.0, 5.0, 0.6
+tree = 11.0, 8.0, 0.5
+tree = 6.0, 13.0, 0.6
+tree = 14.0, 11.0, 0.5

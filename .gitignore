@@ -1,0 +1,20 @@
+# Maven / Java
+target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# macOS
+.DS_Store
+
+# Simulation output (screenshots in docs/ are kept)
+*.png
+!docs/*.png

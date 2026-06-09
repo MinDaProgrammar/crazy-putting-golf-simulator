@@ -1,0 +1,31 @@
+# Course 5: Highland Pass
+# Rolling terrain with two lakes placed at different heights along the fairway.
+# The diagonal slope bends the ball sideways — aim correction is required.
+# All coordinates are non-negative: (0,0) is the bottom-left corner of the course.
+# Water is anywhere height < 0.
+height_profile = 0.2 + 0.15 * sin(x / 7.0) + 0.12 * cos(y / 8.0) - 0.45 * exp(-((x - 7.0)^2 + (y - 8.0)^2) / 14.0) - 0.50 * exp(-((x - 13.0)^2 + (y - 4.0)^2) / 16.0)
+
+# Slope check:
+#   sin term:      0.15 / 7.0 = 0.021               OK
+#   cos term:      0.12 / 8.0 = 0.015               OK
+#   Gaussian 1:    0.45 * sqrt(2/14) * exp(-0.5) = 0.103  OK
+#   Gaussian 2:    0.50 * sqrt(2/16) * exp(-0.5) = 0.107  OK
+#   Combined max:  0.103 + 0.021 + 0.015 = 0.140    OK
+#   2nd deriv G1:  0.45 * 4/14 * exp(-1) = 0.048    OK
+#   2nd deriv G2:  0.50 * 4/16 * exp(-1) = 0.046    OK
+#   Lake-1 center (7,8):   h = -0.078               WATER OK
+#   Lake-2 center (13,4):  h = -0.062               WATER OK
+#   Start (2,2):            h =  0.353              DRY   OK
+#   Target (17,15):         h =  0.262              DRY   OK
+
+friction_kinetic = 0.06
+friction_static = 0.13
+
+start_x = 2.0
+start_y = 2.0
+
+target_x = 17.0
+target_y = 15.0
+target_radius = 0.12
+
+vmax = 5.0

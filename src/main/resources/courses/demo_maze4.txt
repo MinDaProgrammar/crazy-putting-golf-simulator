@@ -1,0 +1,53 @@
+# Demo Maze Course 4 — 6+ Shots (estimated)
+# demo_maze3 + one sandpit added in the upper-left zone where the ball
+# travels on shot 1 and shot 2. This second heavy sandpit disrupts the
+# approach line from the left side, forcing the ball to stop mid-course
+# and navigate a longer, tighter sequence of shots.
+#
+# MLBot behaviour (approx):
+#   Shot 1: slowed by sandpit(12.5,16.5) -> stops earlier in upper area
+#   Shot 2: rerouted, additional stop needed
+#   Shot 3: slowed by sandpit(16,16)
+#   Shot 4+: careful multi-putt finish
+#   Total: 6+ shots (MazeMLBot with A* should outperform plain MLBot here)
+#
+# Extra obstacles: all 4 cumulative additions on top of demo_course
+# Height check: h(12.5,16.5)=0.334  dry
+
+height_profile = 0.3 + 0.12 * sin(x / 7.0) + 0.10 * cos(y / 7.0) - 0.55 * exp(-((x - 9.0)^2 + (y - 9.0)^2) / 18.0)
+
+friction_kinetic = 0.07
+friction_static  = 0.15
+
+start_x = 2.0
+start_y = 2.0
+
+target_x = 17.0
+target_y = 17.0
+target_radius = 0.15
+
+vmax = 5.0
+
+# --- OBSTACLES ---
+
+# Original demo_course sandpits
+sandpit = 5.0, 6.0, 1.2, 0.40, 0.55
+sandpit = 13.0, 13.0, 1.2, 0.42, 0.58
+
+# Original demo_course trees
+tree = 7.0, 5.0, 0.6
+tree = 11.0, 8.0, 0.5
+tree = 6.0, 13.0, 0.6
+tree = 14.0, 11.0, 0.5
+
+# === MAZE EXTRA #1: blocks shot-1 landing zone ===
+tree = 13.0, 18.0, 0.8
+
+# === MAZE EXTRA #2: closes the right-side approach corridor ===
+tree = 15.0, 16.0, 0.8
+
+# === MAZE EXTRA #3: heavy sandpit on shot-3 path ===
+sandpit = 16.0, 16.0, 1.0, 0.44, 0.58
+
+# === MAZE EXTRA #4: sandpit disrupting the upper-left travel zone (shot 1/2 path) ===
+sandpit = 12.5, 16.5, 1.2, 0.45, 0.60

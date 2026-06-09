@@ -1,0 +1,23 @@
+# Height profile function from the manual 
+height_profile = 0.25 * sin((x + y) / 10) + 1
+
+# Friction coefficients 
+friction_kinetic = 0.08
+friction_static = 0.2
+
+# Target coordinates and radius 
+target_x = 14.0
+target_y = 1.0
+target_radius = 0.1
+
+# Start position 
+start_x = 7.0
+start_y = 8.0
+
+# Maximum velocity from general parameters 
+vmax = 5.0
+
+# Optional obstacles (not specified in the manual's test case, 
+# but included in your previous format)
+# sandpit = (x, y, radius, kinetic_friction, static_friction)
+# tree = (x, y, radius)
