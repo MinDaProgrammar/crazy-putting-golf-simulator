@@ -1,0 +1,80 @@
+# Test Maze Course 2 - S-shaped corridor
+# Two horizontal tree walls with offset gaps force a zigzag path
+# Wall A at y=7: gap on the right (x > 14)
+# Wall B at y=13: gap on the left (x < 6)
+# Requires 3+ shots to navigate
+
+height_profile = 0.5 + 0.04 * sin(x / 6.0) + 0.03 * cos(y / 8.0)
+
+friction_kinetic = 0.07
+friction_static = 0.16
+
+start_x = 2.0
+start_y = 2.0
+
+target_x = 18.0
+target_y = 18.0
+target_radius = 0.15
+
+vmax = 5.0
+
+# --- WALL A (y = 7, x from 0 to 18) ---
+# Gap only at x = 19-20 (right side)
+tree = 0.0, 7.0, 0.5
+tree = 1.0, 7.0, 0.5
+tree = 2.0, 7.0, 0.5
+tree = 3.0, 7.0, 0.5
+tree = 4.0, 7.0, 0.5
+tree = 5.0, 7.0, 0.5
+tree = 6.0, 7.0, 0.5
+tree = 7.0, 7.0, 0.5
+tree = 8.0, 7.0, 0.5
+tree = 9.0, 7.0, 0.5
+tree = 10.0, 7.0, 0.5
+tree = 11.0, 7.0, 0.5
+tree = 12.0, 7.0, 0.5
+tree = 13.0, 7.0, 0.5
+tree = 14.0, 7.0, 0.5
+tree = 15.0, 7.0, 0.5
+tree = 16.0, 7.0, 0.5
+tree = 17.0, 7.0, 0.5
+tree = 18.0, 7.0, 0.5
+
+# --- WALL B (y = 13, x from 1 to 20) ---
+# Gap only at x = 0 (left side)
+
+
+tree = 3.0, 13.0, 0.5
+tree = 4.0, 13.0, 0.5
+tree = 5.0, 13.0, 0.5
+tree = 6.0, 13.0, 0.5
+tree = 7.0, 13.0, 0.5
+tree = 8.0, 13.0, 0.5
+tree = 9.0, 13.0, 0.5
+tree = 10.0, 13.0, 0.5
+tree = 11.0, 13.0, 0.5
+tree = 12.0, 13.0, 0.5
+tree = 13.0, 13.0, 0.5
+tree = 14.0, 13.0, 0.5
+tree = 15.0, 13.0, 0.5
+tree = 16.0, 13.0, 0.5
+tree = 17.0, 13.0, 0.5
+tree = 18.0, 13.0, 0.5
+tree = 19.0, 13.0, 0.5
+tree = 20.0, 13.0, 0.5
+tree = 21.0, 13.0, 0.5
+tree = 22.0, 13.0, 0.5
+tree = 23.0, 13.0, 0.5
+tree = 24.0, 13.0, 0.5
+tree = 25.0, 13.0, 0.5
+tree = 26.0, 13.0, 1.5
+tree = 28.0, 13.0, 1.5
+tree = 30.0, 13.0, 1.5
+tree = 32.0, 13.0, 1.5
+tree = 34.0, 13.0, 1.5
+tree = 36.0, 13.0, 1.5
+tree = 38.0, 13.0, 3.0
+tree = 41.0, 13.0, 3.0
+
+# --- SANDPITS (optional difficulty) ---
+sandpit = 10.0, 10.0, 1.0, 0.35, 0.50

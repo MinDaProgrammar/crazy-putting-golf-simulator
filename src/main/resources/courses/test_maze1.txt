@@ -1,0 +1,17 @@
+# Course: S-Maze
+# Start bottom-left, target top-right. Two water barriers force a 3+ shot detour:
+# go up the left side, cross above the horizontal barrier, then down to the target.
+# Water is anywhere height < 0.
+height_profile = 0.18 + 0.06 * sin(x / 14.0) + 0.06 * cos(y / 14.0) - 0.52 * exp(-((x - 8.0)^2) / 5.0) * exp(-((y - 9.0)^2) / 30.0) - 0.52 * exp(-((x - 13.0)^2) / 30.0) * exp(-((y - 14.0)^2) / 5.0)
+
+friction_kinetic = 0.07
+friction_static = 0.15
+
+start_x = 2.0
+start_y = 2.0
+
+target_x = 18.0
+target_y = 18.0
+target_radius = 0.12
+
+vmax = 5.0

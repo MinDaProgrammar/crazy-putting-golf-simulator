@@ -1,0 +1,33 @@
+# Course 6: Obstacle Run
+# A gentle uphill slope with sandpits and trees blocking the direct path.
+# The player (or bot) must navigate around the hazards to reach the target.
+# All coordinates are non-negative: (0,0) is the bottom-left corner of the course.
+height_profile = 0.05 * y
+
+# Slope check:  dh/dy = 0.05  OK
+
+friction_kinetic = 0.1
+friction_static = 0.2
+
+start_x = 5.0
+start_y = 2.0
+
+target_x = 5.0
+target_y = 16.0
+
+# target_radius fixed: was 0.5, allowed range is 0.05 - 0.15 m
+target_radius = 0.15
+
+vmax = 5.0
+
+# --- OBSTACLES ---
+
+# Sandpits: x, y, radius, kinetic_friction, static_friction
+sandpit = 5.0, 5.5, 1.5, 0.4, 0.55
+sandpit = 3.0, 12.0, 2.0, 0.45, 0.6
+
+# Trees: x, y, radius
+tree = 5.0, 8.0, 0.6
+tree = 3.0, 4.0, 0.8
+tree = 8.0, 10.0, 1.0
+tree = 7.0, 14.0, 0.5

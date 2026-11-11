@@ -1,0 +1,23 @@
+# Course 4: Harbor Hills
+height_profile = 0.2 + 0.15 * sin(x / 8.0) * cos(y / 8.0) - 0.50 * exp(-((x - 8.0)^2 + (y - 9.0)^2) / 14.0)
+
+# Slope check:
+#   sin*cos term: 0.15 / 8.0 = 0.019              OK
+#   Gaussian:     0.50 * sqrt(2/14) * exp(-0.5) = 0.115  OK
+#   Combined max: 0.019 + 0.115 = 0.133            OK
+#   2nd deriv G:  0.50 * 4/14 * exp(-1) = 0.053    OK
+#   Lake center (8,9): h = -0.246                  WATER OK
+#   Start (2,2):        h =  0.235                 DRY   OK
+#   Target (16,16):     h =  0.143                 DRY   OK
+
+friction_kinetic = 0.05
+friction_static = 0.12
+
+start_x = 2.0
+start_y = 2.0
+
+target_x = 16.0
+target_y = 16.0
+target_radius = 0.13
+
+vmax = 5.0

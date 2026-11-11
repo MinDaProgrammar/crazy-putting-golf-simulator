@@ -1,0 +1,21 @@
+# Course 3: Twin Lakes
+height_profile = 0.45 + 0.25 * sin((x + y) / 9.0) - 0.42 * exp(-((x - 6.0)^2 + (y - 5.0)^2) / 10.0) - 0.38 * exp(-((x - 14.0)^2 + (y - 11.0)^2) / 9.0)
+
+# Slope check:
+#   sin term:    0.25 / 9.0 = 0.028              OK
+#   Gaussian 1:  0.42 * sqrt(2/10) * exp(-0.5) = 0.114  OK
+#   Gaussian 2:  0.38 * sqrt(2/9)  * exp(-0.5) = 0.109  OK
+#   2nd deriv G1: 0.42 * 4/10 * exp(-1) = 0.062  OK
+#   2nd deriv G2: 0.38 * 4/9  * exp(-1) = 0.062  OK
+
+friction_kinetic = 0.06
+friction_static = 0.13
+
+start_x = 2.0
+start_y = 2.0
+
+target_x = 17.0
+target_y = 14.0
+target_radius = 0.14
+
+vmax = 5.0

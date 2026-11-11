@@ -1,0 +1,17 @@
+/*colors of each varaible on the line chart*/
+.default-color0.chart-series-line { -fx-stroke: #f5cf28; }
+.default-color0.chart-line-symbol { -fx-background-color: #0072B2, white; }
+
+.default-color1.chart-series-line { -fx-stroke: #07b996; }
+.default-color1.chart-line-symbol { -fx-background-color: #D55E00, white; }
+
+.default-color2.chart-series-line { -fx-stroke: #ce4010; }
+.default-color2.chart-line-symbol { -fx-background-color: #89009e, white; }
+
+.default-color3.chart-series-line { -fx-stroke: #96199b; }
+.default-color3.chart-line-symbol { -fx-background-color: #CC79A7, white; }
+
+/* This also fixes the Legend colors automatically */
+.chart-legend-item-symbol {
+   -fx-background-radius: 0; 
+}

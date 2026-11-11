@@ -1,0 +1,40 @@
+# Demo MazeBot Course 3
+# Base: demo_mazebot2 + MAZEBOT EXTRA #3
+# All tree radii capped at 0.5
+#
+height_profile = 0.3 + 0.12 * sin(x / 7.0) + 0.10 * cos(y / 7.0) - 0.55 * exp(-((x - 9.0)^2 + (y - 9.0)^2) / 18.0)
+
+friction_kinetic = 0.07
+friction_static  = 0.15
+
+start_x = 2.0
+start_y = 2.0
+
+target_x = 17.0
+target_y = 17.0
+target_radius = 0.15
+
+vmax = 5.0
+
+# --- OBSTACLES ---
+
+sandpit = 5.0, 6.0, 1.2, 0.40, 0.55
+sandpit = 13.0, 13.0, 1.2, 0.42, 0.58
+
+# Original demo_course trees (radii capped to 0.5)
+tree = 7.0, 5.0, 0.5
+tree = 11.0, 8.0, 0.5
+tree = 6.0, 13.0, 0.5
+tree = 14.0, 11.0, 0.5
+
+# From demo_maze1
+tree = 13.0, 18.0, 0.5
+
+# From demo_mazebot1
+tree = 11.0, 2.5, 0.5
+
+# From demo_mazebot2
+tree = 4.0,11.0,0.5
+
+# === MAZEBOT EXTRA #3 ===
+tree = 2.0, 11.0, 0.5
